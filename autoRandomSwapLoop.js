@@ -45,7 +45,18 @@ async function swap(fromSymbol, toSymbol) {
   const deadline = Math.floor(Date.now() / 1000) + 600;
 
   try {
-    const tx = await router.swapExactTokensCustom(tokenA, tokenB, amountIn, to, deadline, amountOutMin, slippage);
+    const tx = await router.swapExactTokensCustom(
+  tokenA,
+  tokenB,
+  amountIn,
+  to,
+  deadline,
+  amountOutMin,
+  slippage,
+  {
+    gasLimit: 500000  // set manual biar gak error estimate
+  }
+);
     console.log(`🔁 Swapped ${amountStr} ${fromSymbol} → ${toSymbol} | TX: ${tx.hash}`);
     await tx.wait();
     console.log(`✅ ${fromSymbol} → ${toSymbol} Success`);
