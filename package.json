@@ -1,0 +1,16 @@
+{
+  "name": "swap0g",
+  "version": "1.0.0",
+  "description": "CLI for swapping tokens on 0G testnet",
+  "main": "swapPrompt.js",
+  "scripts": {
+    "approve": "node approvePrompt.js",
+    "swap": "node swapPrompt.js",
+    "add": "node addLiquidityPrompt.js",
+    "remove": "node removeLiquidityPrompt.js"
+  },
+  "dependencies": {
+    "ethers": "^5.7.2",
+    "prompt-sync": "^4.2.0"
+  }
+}
